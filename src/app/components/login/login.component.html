@@ -1,0 +1,104 @@
+<br>
+<div *ngIf="editform==false" class="container-fluid">
+<button
+    routerLink="/register" routerLinkActive="active"
+    class="btn btn-primary" style="background-color:green ;" >Log out</button>
+    &nbsp;
+    <button
+    routerLink="/employees" routerLinkActive="active"
+    class="btn btn-primary" style="background-color:green ;" >Employees</button>
+</div>
+
+<br>
+<form #myform="ngForm" (ngSubmit)="submit()" [noValidate]="false" >
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+        <input type="text" class='form-control' name="username" placeholder="First name" [(ngModel)]="userModel.username" required>
+        </div>
+    
+        <div class="col-4">
+        <input type="text" class='form-control' name="surname" placeholder="Last name" [(ngModel)]="userModel.surname" required>
+        </div>
+
+        <div class="col-4">
+            <input type="date" class='form-control' name="dob" aria-placeholder="DOB" placeholder="Date of birth" [(ngModel)]="userModel.dob" required>
+        </div>
+    <br>
+    <br>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-4">
+            <label>Gender: &nbsp;</label>
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="gender" id="btnradio1" (click)="userModel.gender='Male'" required [checked]="userModel.gender==='Male'">
+        <label class="btn btn-outline-secondary" for="btnradio1">Male</label>
+      
+        <input type="radio" class="btn-check" name="gender" id="btnradio2" (click)="userModel.gender='Female'" required [checked]="userModel.gender==='Female'">
+        <label class="btn btn-outline-success" for="btnradio2">Female</label>
+    </div>
+    </div>
+    <div class="col-4">
+        <input type="text" class='form-control' name="adress" placeholder="Adress" [(ngModel)]="userModel.adress" required>
+
+    </div>
+    <div class="col-4">
+        <label>Designation: &nbsp;</label>
+        <select class="col-8" id="inputGroupSelect01" name="type" [(ngModel)]="userModel.type" required>
+            <option value="">Select type</option>
+            <option *ngFor="let x of type">{{x}}</option>
+        </select>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-4">
+            <input type="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="userModel.email" aria-describedby="emailHelp">
+        </div>
+        <div class="col-4">
+            <input type="number" class="form-control" placeholder="Mobile number" name="mobile" [(ngModel)]="userModel.mobile" >
+        </div>
+
+    </div>
+
+    <!-- <div class="col-2">
+        <mat-datepicker #picker></mat-datepicker>
+    </div> -->
+    <!-- <div class="col-2">   
+        <mat-form-field >
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div> -->
+        
+    
+    <br>
+    <div>
+        <br>
+    <div class="input-group mb-3">
+        <div>
+            
+          <input class="form-check-input mt-0" type="checkbox" [(ngModel)]="userModel.remeber" name="rememberme">
+          <label>&nbsp; Remember Me</label>
+        </div>
+    </div>
+  
+    
+
+
+      
+
+</div>
+<button type="submit" class="btn btn-primary" >submit</button>
+</div>
+</form>
+
+
+
+
+
+    

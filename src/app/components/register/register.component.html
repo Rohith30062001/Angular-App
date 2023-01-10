@@ -1,0 +1,68 @@
+<html>
+    <head>
+	<title> Login Page!</title>
+	
+	 <link rel="shortcut icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi5QSvWcMFk3zowq9_NHg5JV21sPCOOTUY5Q&usqp=CAU"/>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	
+	</head>
+        <body style="background-color:powderblue;text-align: center;">
+     
+			
+		
+
+       
+		   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoaPLPMZE1sJX9Ik_FtKM8X1mwam4TnVBgjA&usqp=CAU">
+ 
+           <form #form="ngForm"(submit)="check(form)" style="text-align: center">
+			<br>
+			
+			
+		    <label> user name </label> <br>
+			<input type="text"
+            name="username"
+            placeholder="username"
+            required
+            #user="ngModel"
+            [(ngModel)]="username">
+
+            <br>
+			<h1>          </h1>
+			<label> password </label><br>
+			<input type="password"
+            name="password"
+            placeholder="password"
+            required
+            #pass="ngModel"
+            [(ngModel)]="password">
+            <br><br>
+			
+            <button
+            
+            class="btn btn-primary" style="background-color:green ;"  >Login</button>
+
+          
+
+		</form>
+<div *ngIf="allowroute==false">
+  <h4 style="color: red;"> Incorrect Credentials</h4>
+</div>	
+<div *ngIf="allowroute">
+    <h4 style="color: green;" > Login Successfull</h4>
+   
+  </div>	
+ <br><br>
+  <div *ngIf="allowroute">
+    <h4 style="color: green;" routerLink="/login" routerLinkActive="active"
+    class="btn btn-primary" style="background-color:green ;"> Go To Register</h4>
+   
+  </div>	
+
+</body>
+ 
+ credentials : {{allowroute}}
+ 
+ </html>
+
+<router-outlet></router-outlet>
