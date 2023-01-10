@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
   url="http://127.0.0.1:5000"
   geturl = "http://127.0.0.1:5000/employees"
+  deletusereurl = "http://127.0.0.1:5000/delete"
   constructor(public http:HttpClient) { }
   enroll(user:any){
     console.log("enroolll", user);
@@ -18,4 +19,10 @@ export class UserService {
     console.log("get users service")
     return this.http.get<any>(this.geturl)
   }
+  deleteuser(id:any){
+    let deleteurl = this.deletusereurl + '/'+id
+    console.log('delete usere service',deleteurl)
+    return this.http.delete<any>(deleteurl)
+  }
+
 }

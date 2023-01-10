@@ -28,4 +28,11 @@ export class EmployeelistComponent implements OnInit {
     this.editdata=x
     console.log("edit data",x)
   }
+  deleteuser(){
+    this.userservice.deleteuser(this.editdata[0]).subscribe(
+      data => console.log('deleted'),
+      error => console.log("error")
+    )
+    location.reload()
+  }
 }

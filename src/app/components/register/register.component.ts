@@ -21,6 +21,11 @@ export class RegisterComponent implements OnInit {
     if(data.value['username']==='admin' && data.value['password']==='admin'){
       console.log("true")
       this.allowroute=true
+      this.username=''
+      this.password=''
+    }
+    else{
+      this.allowroute=false
     }
   }
   

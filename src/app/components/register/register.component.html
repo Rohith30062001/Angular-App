@@ -15,7 +15,7 @@
        
 		   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoaPLPMZE1sJX9Ik_FtKM8X1mwam4TnVBgjA&usqp=CAU">
  
-           <form #form="ngForm"(submit)="check(form)" style="text-align: center">
+           <form #form="ngForm" style="text-align: center">
 			<br>
 			
 			
@@ -40,7 +40,7 @@
 			
             <button
             
-            class="btn btn-primary" style="background-color:green ;"  >Login</button>
+            class="btn btn-primary" style="background-color:green ;" (click)="check(form)" >Login</button>
 
           
 
