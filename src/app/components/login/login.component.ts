@@ -28,13 +28,13 @@ export class LoginComponent implements OnInit {
       this.userModel.userid=this.data[0]
       this.userModel.username=this.data[1]
       this.userModel.surname=this.data[2]
-      this.userModel.mobile=this.data[3]
-      this.userModel.dob=this.data[4]
-      this.userModel.gender=this.data[5]
-      this.userModel.adress=this.data[6]
-      this.userModel.email=this.data[7]
-      this.userModel.type=this.data[8]
-      this.userModel.remeber=true?this.data[9]==1:false
+      this.userModel.mobile=this.data[9]
+      this.userModel.dob=this.data[3]
+      this.userModel.gender=this.data[4]
+      this.userModel.adress=this.data[5]
+      this.userModel.email=this.data[6]
+      this.userModel.type=this.data[7]
+      this.userModel.remeber=true?this.data[8]==1:false
       console.log("after usermodel",this.userModel)
     }
     
